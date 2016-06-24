@@ -43,6 +43,7 @@ const Select = React.createClass({
 		clearAllText: stringOrNode,                 // title for the "clear" control when multi: true
 		clearValueText: stringOrNode,               // title for the "clear" control
 		clearable: React.PropTypes.bool,            // should it be possible to reset value
+		closeMenuOnSelectFocused: React.PropTypes.bool, //option to close menu after focused option is selected
 		delimiter: React.PropTypes.string,          // delimiter to use to join multiple values for the hidden field value
 		disabled: React.PropTypes.bool,             // whether the Select is disabled or not
 		escapeClearsValue: React.PropTypes.bool,    // whether escape clears the value when the menu is closed
@@ -109,6 +110,7 @@ const Select = React.createClass({
 			clearable: true,
 			clearAllText: 'Clear all',
 			clearValueText: 'Clear value',
+			closeMenuOnSelectFocused: false,
 			delimiter: ',',
 			disabled: false,
 			escapeClearsValue: true,
@@ -656,6 +658,11 @@ const Select = React.createClass({
 		// if (this.props.allowCreate && !this.state.focusedOption) {
 		// 	return this.selectValue(this.state.inputValue);
 		// }
+
+		if(this.props.multi && this.props.closeMenuOnSelectFocused) {
+			this.closeMenu();
+		}
+
 		if (this._focusedOption) {
 			return this.selectValue(this._focusedOption);
 		}
