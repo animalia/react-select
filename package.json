@@ -1,6 +1,6 @@
 {
   "name": "react-select",
-  "version": "1.0.0-beta13",
+  "version": "1.0.0-beta14",
   "description": "A Select control built with and for ReactJS",
   "main": "lib/Select.js",
   "style": "dist/react-select.min.css",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JedWatson/react-select.git"
+    "url": "https://github.com/animalia/react-select.git"
   },
   "dependencies": {
     "classnames": "^2.2.4",
